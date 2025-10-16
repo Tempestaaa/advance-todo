@@ -1,19 +1,27 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeftRightIcon } from "lucide-react";
+import { MoonIcon } from "lucide-react";
 
 export default function SidebarHeader() {
   return (
-    <header className="h-12 flex items-center gap-4">
-      <div className="h-full aspect-square rounded-md bg-foreground"></div>
+    <section className="flex items-center gap-2">
+      <figure className="h-10 aspect-square rounded-md bg-foreground"></figure>
 
       <div className="flex flex-col">
-        <h4 className="text-xl font-bold">Plan.io</h4>
-        <p className="text-muted-foreground">Username</p>
+        <p className="font-bold">Username</p>
+
+        <Badge
+          variant="secondary"
+          className="flex items-center gap-1 rounded w-fit px-1"
+        >
+          <div className="size-1.5 rounded-full bg-green-600" />
+          <small className="text-green-600">Active</small>
+        </Badge>
       </div>
 
       <Button variant="ghost" className="ml-auto">
-        <ArrowLeftRightIcon />
+        <MoonIcon />
       </Button>
-    </header>
+    </section>
   );
 }

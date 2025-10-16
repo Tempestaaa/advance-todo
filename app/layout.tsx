@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/shared/sidebar/sidebar";
 
-const defaultFont = Inter({
+const defaultFont = Montserrat({
   subsets: ["latin"],
 });
 
@@ -18,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${defaultFont.className} antialiased h-dvh max-h-dvh overflow-hidden flex *:p-4`}
-      >
+      <body className={`${defaultFont.className} antialiased flex`}>
         <Sidebar />
         <main className="grow">{children}</main>
       </body>

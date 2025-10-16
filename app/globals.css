@@ -89,3 +89,23 @@
     @apply cursor-pointer;
   }
 }
+
+@layer utilities {
+  .hover {
+    @apply text-muted-foreground hover:text-foreground transition-all duration-300;
+  }
+  .scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

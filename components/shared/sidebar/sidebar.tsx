@@ -1,15 +1,19 @@
-import GeneralList from "@/components/shared/sidebar/general-list";
+import LabelList from "@/components/shared/sidebar/label-list";
+import MainList from "@/components/shared/sidebar/main-list";
+import SearchBar from "@/components/shared/sidebar/search-bar";
 import SidebarHeader from "@/components/shared/sidebar/sidebar-header";
+import { Separator } from "@/components/ui/separator";
 
 export default function Sidebar() {
   return (
-    <aside className="basis-1/4 rounded-md flex flex-col gap-8">
+    <aside className="sticky top-0 left-0 w-xs h-dvh max-h-dvh shrink-0 p-4 flex flex-col gap-4 bg-muted/50">
       <SidebarHeader />
-
-      <section className="flex-1 overflow-y-auto space-y-8">
-        <GeneralList header="Private" addItemText="Create new list" />
-        <GeneralList header="Workspace" addItemText="Create new workspace" />
-      </section>
+      <Separator />
+      <SearchBar />
+      <div className="flex-1 flex flex-col gap-4 overflow-y-auto scrollbar">
+        <MainList />
+        <LabelList />
+      </div>
     </aside>
   );
 }
