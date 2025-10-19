@@ -20,7 +20,7 @@ export default function TodoPage() {
       </header>
 
       <section className="grid grid-cols-3 gap-4 h-full">
-        <TodoList icon={CircleIcon} name="Todo" numberOfTasks={4} />
+        <TodoList icon={CircleIcon} name="Active" numberOfTasks={4} />
         <TodoList
           icon={LoaderCircleIcon}
           name="In Progress"

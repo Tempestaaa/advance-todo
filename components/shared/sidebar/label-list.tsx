@@ -4,41 +4,37 @@ import Link from "next/link";
 
 const labels = [
   {
-    color: "#a1a1a1",
-    name: "Personal",
+    name: "Active",
+    href: "active",
   },
   {
-    color: "#a1a1a1",
-    name: "Work",
+    name: "Completed",
+    href: "completed",
   },
   {
-    color: "#a1a1a1",
-    name: "To read",
+    name: "In progress",
+    href: "in-progress",
   },
   {
-    color: "#9810fa",
-    name: "Follow-up",
+    name: "Paused",
+    href: "paused",
   },
   {
-    color: "#e17100",
-    name: "To-do",
-  },
-  {
-    color: "#00a63e",
-    name: "Travel",
+    name: "Cancelled",
+    href: "cancelled",
   },
 ];
 
 export default function LabelList() {
   return (
-    <GeneralList label="Labels">
+    <GeneralList label="States">
       {labels.map((item) => (
         <Link
           key={item.name}
-          href={`/todo?tag=${item.name.toLowerCase()}`}
+          href={`/todo?tag=${item.href}`}
           className="flex items-center gap-2 py-1.5 px-2 rounded-md hover hover:bg-muted/50"
         >
-          <TagIcon style={{ color: `${item.color}` }} className="size-4" />
+          <TagIcon className="size-4" />
           <span>{item.name}</span>
         </Link>
       ))}
