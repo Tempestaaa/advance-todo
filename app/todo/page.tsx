@@ -1,3 +1,4 @@
+import AddTodo from "@/components/pages/todo/add-todo";
 import TodoList from "@/components/pages/todo/todo-list";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,10 +14,7 @@ export default function TodoPage() {
       <header className="flex items-center justify-between">
         <h4 className="text-2xl font-semibold">To Do List</h4>
 
-        <Button size="sm">
-          <PlusIcon />
-          <span>Add new task</span>
-        </Button>
+        <AddTodo />
       </header>
 
       <section className="grid grid-cols-3 gap-4 h-full">
